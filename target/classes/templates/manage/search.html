@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  	<title>LatLong</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<th:block  th:include="layout/header :: bootstrapAdmin_css_js"/>
+	<th:block th:include="layout/header :: verify_css" />
+</head>
+<body>
+	
+<div class="panel-body">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="text-center">输入地址获取经纬度</h1>
+        </div>
+         <div class="modal-body">
+         	<div class="row">
+         	<form id="findForm" th:method="post" th:action="@{'/search'}">
+         		<div class="form-group col-lg-10">
+             	 	<label>地址：</label>
+                 	<input type="text" class="form-control input-lg" placeholder="输入地址信息" th:value="${address}" id="address" name="address"/>
+             	</div>
+             	<div class="form-group col-lg-2">
+             		<label>&nbsp;</label>
+                	<button type="submit" class="btn btn-block btn-lg btn-primary">查找</button>
+             	</div>
+            </form>
+         	</div>
+
+            <div class="row">
+	             <div class="form-group col-lg-6">
+	             	 <label>经度：</label>
+	                 <input type="text" class="form-control input-lg" placeholder="经度" th:value="${lng}" id="longitude" name="longitude"/>
+	             </div>
+	             <div class="form-group col-lg-6">
+	             	 <label>纬度：</label>
+	                 <input type="text" class="form-control input-lg" placeholder="纬度" th:value="${lat}" id="latitude" name="latitude"/>
+	             </div>
+            </div>
+
+         </div>
+    </div>
+ </div>
+ <form id="goMain" action="./main">
+ <button type="submit" class="btn btn-success btn-circle btn-lg"><i class="fa fa-link"></i></button>
+ </form>
+</div>
+
+<div class="text-center">
+	<th:block  th:include="layout/footer :: copy" />
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

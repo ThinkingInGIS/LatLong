@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+
+<head >
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<th:block th:fragment="common_js">
+		<script type="text/javascript" th:src="@{/assets/jquery/js/jquery-3.1.1.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/jquery/js/jquery-ui.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/jquery/js/jquery.timer.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap/js/bootbox.min.js}"></script>
+	</th:block>
+	
+	<th:block th:fragment="echarts_js">
+		<script type="text/javascript" th:src="@{/assets/js/echarts.js}"></script>
+	</th:block>
+	
+	<th:block th:fragment="common_css">
+		<link rel="stylesheet" th:href="@{/assets/jquery/css/jquery-ui.min.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/jquery/css/jquery-ui.structure.min.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap-responsive.min.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap/theme/Cerulean/bootstrap.min.css}"></link>
+		
+		<link rel="stylesheet" th:href="@{/assets/glyphicons/css/glyphicons.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/glyphicons-filetypes/css/glyphicons-filetypes.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/glyphicons-halflings/css/glyphicons-halflings.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/glyphicons-social/css/glyphicons-social.css}"></link>
+	</th:block>
+	
+	<th:block th:fragment="pagination_js_css">
+		<script type="text/javascript" th:src="@{/assets/jquery/js/jquery.pagination.js}"></script>
+		<link rel="stylesheet" th:href="@{/assets/jquery/css/pagination.css}"></link>
+	</th:block>
+	
+	<th:block th:fragment="validator_js_css" >
+		<script type="text/javascript" th:src="@{/assets/bootstrap/validator/bootstrapValidator.min.js}"></script>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap/validator/bootstrapValidator.min.css}"></link>
+	</th:block>
+	
+	<th:block th:fragment="datetimepicker_js_css">
+		<script type="text/javascript" th:src="@{/assets/bootstrap/datetimepicker/bootstrap-datetimepicker.min.js}" charset="UTF-8"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap/datetimepicker/bootstrap-datetimepicker.zh-CN.js}" charset="UTF-8"></script>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap/datetimepicker/bootstrap-datetimepicker.min.css}"></link>
+	</th:block>
+	
+	<th:block th:fragment="bootstrapAdmin_css_js">
+		<link rel="stylesheet" th:href="@{/assets/bootstrap-admin/css/bootstrap.min.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap-admin/css/metisMenu.min.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap-admin/css/sb-admin-2.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap-admin/css/font-awesome.min.css}"></link>
+		
+		<script type="text/javascript" th:src="@{/assets/bootstrap-admin/js/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap-admin/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap-admin/js/metisMenu.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap-admin/js/sb-admin-2.min.js}"></script>
+	</th:block>
+		
+	<th:block th:fragment="bootstrapHeroic_css_js">
+		<link rel="stylesheet" th:href="@{/assets/bootstrap-heroic/css/bootstrap.min.css}"></link>
+		<link rel="stylesheet" th:href="@{/assets/bootstrap-heroic/css/heroic-features.css}"></link>
+		
+		<script type="text/javascript" th:src="@{/assets/bootstrap-heroic/js/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap-heroic/js/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/bootstrap-heroic/js/bootstrap.min.js}"></script>
+	</th:block>
+	
+	<th:block th:fragment="chooseHouse_css_js">
+		<link rel="stylesheet" th:href="@{/assets/choose-house/css/houses.css}"></link>
+		
+		<script type="text/javascript" th:src="@{/assets/choose-house/js/jquery.house-charts.min.js}"></script>
+	</th:block>
+	
+	<th:block th:fragment="verify_css">
+		<link rel="stylesheet" th:href="@{/assets/verify/verify.css}"></link>
+	</th:block>
+	
+</head>
+
+<body>
+	<nav th:fragment="navbar" class="navbar navbar-default navbar-static-top">
+	
+	  <div class="container-fluid">
+	  
+	    <div class="navbar-header">
+
+	      <a class="navbar-brand" th:href="@{/}">
+	      	<img alt="Brand" width="30" height="30" th:src="@{/assets/image/navi.png}" />
+	      </a>
+	      
+	      <span class="navbar-text label" style="font-size:18px;color:#333333;">LatLong</span>
+	   	</div>
+	    
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      
+	    </div><!-- /.navbar-collapse -->
+	    
+	  </div><!-- /.container-fluid -->
+	</nav>
+</body>
+
+</html>
