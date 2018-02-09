@@ -35,10 +35,13 @@ public class MainController {
 	public String search(@RequestParam String address, ModelMap model) {
 		String res = llService.getLatLong(address, "北京市");
 		String result = JSONObject.parseObject(res).get("result").toString();
+		String location = "";
+		String lat = "";
+		String lng = "";
 		try {
-			String location = JSONObject.parseObject(result).get("location").toString();
-			String lat = JSONObject.parseObject(location).get("lat").toString();
-			String lng = JSONObject.parseObject(location).get("lng").toString();
+			location = JSONObject.parseObject(result).get("location").toString();
+			lat = JSONObject.parseObject(location).get("lat").toString();
+			lng = JSONObject.parseObject(location).get("lng").toString();
 			model.addAttribute("address", address);
 			model.addAttribute("lat", lat);
 			model.addAttribute("lng", lng);
