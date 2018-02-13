@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: LatLong
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Huangkun
+Built-By: gisboy
 Implementation-Vendor-Id: org.nercita
 Build-Jdk: 1.8.0_131
 Implementation-URL: http://maven.apache.org
