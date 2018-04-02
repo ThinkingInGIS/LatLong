@@ -4,8 +4,8 @@
   	<title>统计信息</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
-	<th:block  th:include="layout/header :: echarts_js"/>
 	<th:block  th:include="layout/header :: bootstrapAdmin_css_js"/>
+	<th:block  th:include="layout/header :: echarts_gl_js"/>
 </head>
 <body>
 <div id="wrapper">
@@ -180,7 +180,78 @@
 	<th:block  th:include="layout/footer :: copy" />
 </div>
 <script th:inline="javascript">
-
+$(function(){
+    var omChart;  
+    var omOption;  
+    $.get('./geojson/beijing.json', function (BJjson) {  
+        echarts.registerMap('北京', BJjson);   
+        omChart = echarts.init(document.getElementById('chosenChart'));   
+        omOption = { 
+            title:{  
+                text: 'T',  
+                left: 'center'  
+            },  
+            tooltip: {  
+                trigger: 'item',  
+                formatter: '{b}<br/>{c} (kg)'  
+            },  
+            toolbox: {  
+               show: true,  
+               orient: 'vertical',  
+               left: 'right',  
+               top: 'center',  
+               feature: {  
+                   dataView: {readOnly: false},  
+                   restore: {},  
+                   saveAsImage: {}  
+               }  
+            },  
+            visualMap: {  
+                    min: 0,  
+                    max: 2000,  
+                    text:['高','低'],  
+                    realtime: false,  
+                    calculable: true,  
+                    inRange: {  
+                        color: ['lightskyblue','yellow', 'orangered']  
+                    }  
+            },  
+            series:[  
+                {  
+                	name: 'T',  
+                    type: 'map3D',  
+                    map: '北京', // 自定义扩展图表类型  
+                    aspectScale: 0.75, //地图长宽比. default: 0.75  
+                    zoom: 1.1, //控制地图的zoom，动手自己更改下 看看什么效果吧  
+                    roam: true,  
+                    itemStyle:{  
+                        normal:{label:{show:true}},  
+                        emphasis:{label:{show:true}}  
+                    },
+                    data: [
+                        {name:'东城区', value: 1800},  
+                        {name:'西城区', value: 1700},  
+                        {name:'朝阳区', value: 1600},  
+                        {name:'丰台区', value: 1400},  
+                        {name:'石景山区', value: 1200},  
+                        {name:'海淀区', value: 1000},  
+                        {name:'门头沟区', value: 800},  
+                        {name:'房山区', value: 600},  
+                        {name:'通州区', value: 400},  
+                        {name:'顺义区', value: 200},  
+                        {name:'昌平区', value: 100},  
+                        {name:'大兴区', value: 300},  
+                        {name:'怀柔区', value: 500},  
+                        {name:'平谷区', value: 700},  
+                        {name:'密云县', value: 900},  
+                        {name:'延庆县', value: 1100}  
+                    ]
+                }  
+            ]  
+        }  
+        omChart.setOption(omOption);   
+  }); 
+});
 
 </script>
 </body>

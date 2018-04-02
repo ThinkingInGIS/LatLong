@@ -18,6 +18,11 @@
 		<script type="text/javascript" th:src="@{/assets/js/echarts.js}"></script>
 	</th:block>
 	
+	<th:block th:fragment="echarts_gl_js">
+		<script type="text/javascript" th:src="@{/assets/js/echarts.min.js}"></script>
+		<script type="text/javascript" th:src="@{/assets/js/echarts-gl.min.js}"></script>
+	</th:block>
+	
 	<th:block th:fragment="common_css">
 		<link rel="stylesheet" th:href="@{/assets/jquery/css/jquery-ui.min.css}"></link>
 		<link rel="stylesheet" th:href="@{/assets/jquery/css/jquery-ui.structure.min.css}"></link>
